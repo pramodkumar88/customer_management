@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "Customer Management API",
+    "description": "API to manage customers in the system.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get customer by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a new customer",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/customers",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Test User\",\n  \"customerEmail\": \"testuser@example.com\",\n  \"annualSpend\": 1200.50,\n  \"lastPurchaseDate\": \"2025-04-01T10:00:00\"\n}"
+        },
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      },
+      "response": []
+    },
+    {
+      "name": "Get customer by name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers?name={{customerName}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{customerName}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get customer by email",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers?email={{customerEmail}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "{{customerEmail}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update customer details",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Test User Updated\",\n  \"customerEmail\": \"testuserupdated@example.com\",\n  \"annualSpend\": 1500.75,\n  \"lastPurchaseDate\": \"2025-05-10T10:30:00\"\n}"
+        },
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      },
+      "response": []
+    },
+    {
+      "name": "Delete customer",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
